@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# Streamlit
+.streamlit/
+
+# LaTeX build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.synctex.gz
+
+# Assignment submission zip
+FAI_ASSIGNMENT_2_final.zip
+
+# Compiled report PDF
+reports/*.pdf
+
+# Presentation file
+presentation/*.pptx
+
+# Office temp lock files
+~$*

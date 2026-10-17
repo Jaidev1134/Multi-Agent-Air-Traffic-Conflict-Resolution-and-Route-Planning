@@ -1,0 +1,15 @@
+Scenario,Algorithm,Success,Path Cost,Nodes Expanded,Nodes Generated,Runtime (ms),Waiting Time,Makespan,Conflicts Before Coordination,Unresolved Conflicts After Coordination
+1. Conflict-Free Routes,A*,True,18.0,18,90,0.288,0,9,0,0
+1. Conflict-Free Routes,UCS,True,18.0,456,594,4.28,0,9,0,0
+2. Crossing Routes,A*,True,15.0,15,74,0.433,1,8,1,0
+2. Crossing Routes,UCS,True,15.0,334,439,3.964,1,8,1,0
+3. Unreachable Destination,A*,False,N/A,8372,8372,92.015,N/A,N/A,0,0
+3. Unreachable Destination,UCS,False,N/A,8372,8372,83.4,N/A,N/A,0,0
+4. Narrow Corridor,A*,True,47.0,317,468,3.417,16,22,3,0
+4. Narrow Corridor,UCS,True,47.0,974,1097,8.697,2,22,3,0
+5. Start Equals Goal,A*,True,0.0,0,1,0.024,0,0,0,0
+5. Start Equals Goal,UCS,True,0.0,0,1,0.032,0,0,0,0
+6. Head-On Collision,A*,True,16.0,20,87,0.282,0,9,1,0
+6. Head-On Collision,UCS,True,16.0,388,504,4.665,0,9,1,0
+7. Five Aircraft (Default),A*,True,90.0,336,761,5.343,4,22,3,0
+7. Five Aircraft (Default),UCS,True,89.0,6117,6807,69.743,1,22,3,0

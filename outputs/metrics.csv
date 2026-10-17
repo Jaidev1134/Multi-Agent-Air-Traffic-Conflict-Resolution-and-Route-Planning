@@ -1,0 +1,2 @@
+Aircraft Completed,Aircraft Failed,Total Route Cost,Total Movements,Total Waiting Time,Makespan,Conflicts Before Resolution,Unresolved Conflicts,Total Nodes Expanded,Total Nodes Generated,Total Search Runtime (ms),Replanning Attempts,Algorithm
+5,0,90.0,86,4,22,3,0,336,761,5.343,0,A*

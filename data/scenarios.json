@@ -1,0 +1,439 @@
+{
+  "1. Conflict-Free Routes": {
+    "description": "Two aircraft on separate rows \u2014 no conflicts expected.",
+    "grid": {
+      "width": 10,
+      "height": 10,
+      "restricted_cells": []
+    },
+    "aircraft": [
+      {
+        "id": "AC-1",
+        "start": [
+          0,
+          2
+        ],
+        "goal": [
+          9,
+          2
+        ],
+        "priority": 0,
+        "color": "#e74c3c"
+      },
+      {
+        "id": "AC-2",
+        "start": [
+          0,
+          7
+        ],
+        "goal": [
+          9,
+          7
+        ],
+        "priority": 1,
+        "color": "#2ecc71"
+      }
+    ]
+  },
+  "2. Crossing Routes": {
+    "description": "Intersecting paths \u2014 conflict detection and resolution.",
+    "grid": {
+      "width": 8,
+      "height": 8,
+      "restricted_cells": []
+    },
+    "aircraft": [
+      {
+        "id": "AC-1",
+        "start": [
+          0,
+          3
+        ],
+        "goal": [
+          7,
+          3
+        ],
+        "priority": 0,
+        "color": "#e74c3c"
+      },
+      {
+        "id": "AC-2",
+        "start": [
+          3,
+          0
+        ],
+        "goal": [
+          3,
+          7
+        ],
+        "priority": 1,
+        "color": "#2ecc71"
+      }
+    ]
+  },
+  "3. Unreachable Destination": {
+    "description": "Enclosed goal \u2014 planner should report failure.",
+    "grid": {
+      "width": 10,
+      "height": 10,
+      "restricted_cells": [
+        [
+          4,
+          3
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          5
+        ]
+      ]
+    },
+    "aircraft": [
+      {
+        "id": "AC-1",
+        "start": [
+          0,
+          0
+        ],
+        "goal": [
+          5,
+          4
+        ],
+        "priority": 0,
+        "color": "#e74c3c"
+      }
+    ]
+  },
+  "4. Narrow Corridor": {
+    "description": "Three aircraft through a single-cell corridor.",
+    "grid": {
+      "width": 10,
+      "height": 7,
+      "restricted_cells": [
+        [
+          3,
+          0
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          3,
+          6
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          4,
+          1
+        ],
+        [
+          4,
+          2
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          4,
+          6
+        ],
+        [
+          5,
+          0
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          5,
+          4
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          6,
+          1
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          4
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    "aircraft": [
+      {
+        "id": "AC-1",
+        "start": [
+          0,
+          3
+        ],
+        "goal": [
+          9,
+          3
+        ],
+        "priority": 0,
+        "color": "#e74c3c"
+      },
+      {
+        "id": "AC-2",
+        "start": [
+          9,
+          2
+        ],
+        "goal": [
+          0,
+          2
+        ],
+        "priority": 1,
+        "color": "#2ecc71"
+      },
+      {
+        "id": "AC-3",
+        "start": [
+          0,
+          4
+        ],
+        "goal": [
+          9,
+          4
+        ],
+        "priority": 2,
+        "color": "#3498db"
+      }
+    ]
+  },
+  "5. Start Equals Goal": {
+    "description": "Trivial case \u2014 aircraft already at destination.",
+    "grid": {
+      "width": 5,
+      "height": 5,
+      "restricted_cells": []
+    },
+    "aircraft": [
+      {
+        "id": "AC-1",
+        "start": [
+          2,
+          2
+        ],
+        "goal": [
+          2,
+          2
+        ],
+        "priority": 0,
+        "color": "#e74c3c"
+      }
+    ]
+  },
+  "6. Head-On Collision": {
+    "description": "Opposite-direction aircraft \u2014 edge-swap detection.",
+    "grid": {
+      "width": 8,
+      "height": 8,
+      "restricted_cells": []
+    },
+    "aircraft": [
+      {
+        "id": "AC-1",
+        "start": [
+          0,
+          3
+        ],
+        "goal": [
+          7,
+          3
+        ],
+        "priority": 0,
+        "color": "#e74c3c"
+      },
+      {
+        "id": "AC-2",
+        "start": [
+          7,
+          3
+        ],
+        "goal": [
+          0,
+          3
+        ],
+        "priority": 1,
+        "color": "#2ecc71"
+      }
+    ]
+  },
+  "7. Five Aircraft (Default)": {
+    "description": "Five aircraft on 12\u00d712 grid with obstacles.",
+    "grid": {
+      "width": 12,
+      "height": 12,
+      "restricted_cells": [
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          8
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          6
+        ]
+      ]
+    },
+    "aircraft": [
+      {
+        "id": "AC-1",
+        "start": [
+          0,
+          0
+        ],
+        "goal": [
+          11,
+          11
+        ],
+        "priority": 0,
+        "color": "#e74c3c"
+      },
+      {
+        "id": "AC-2",
+        "start": [
+          11,
+          0
+        ],
+        "goal": [
+          0,
+          11
+        ],
+        "priority": 1,
+        "color": "#2ecc71"
+      },
+      {
+        "id": "AC-3",
+        "start": [
+          0,
+          6
+        ],
+        "goal": [
+          11,
+          6
+        ],
+        "priority": 2,
+        "color": "#3498db"
+      },
+      {
+        "id": "AC-4",
+        "start": [
+          6,
+          0
+        ],
+        "goal": [
+          6,
+          11
+        ],
+        "priority": 3,
+        "color": "#f39c12"
+      },
+      {
+        "id": "AC-5",
+        "start": [
+          2,
+          2
+        ],
+        "goal": [
+          9,
+          9
+        ],
+        "priority": 4,
+        "color": "#9b59b6"
+      }
+    ]
+  }
+}
